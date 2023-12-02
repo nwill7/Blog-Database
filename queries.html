@@ -1,0 +1,91 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Database Design</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+     <div class="wrapper">
+
+     		<div class="header">
+		      <label class="header-title">Database Design</label>
+	    	</div>
+
+		   <div class="container">
+				<div class="newslist">
+			    <p class="header-sub">Hello!</p>
+			    <p class="blog-content">Welcome to the Queries Page.</p>
+			    <br>
+			    <form method="get" action="home.php">
+					<input type="submit" value="Return to HomePage">
+				 </form>
+			    <br />
+			</div>
+			</div>
+
+        <div class="container">
+        	<div class="newslist">
+
+           <div>
+	      <p>1. List all the blogs of user X, such that all the comments are positive for these blogs.</p>
+	   </div>
+		<form method="post" action="query1.php">
+			<label class="input-label">Enter the username for X:</label>
+			<input type="text" id="username2X" name="username2X" placeholder="Username" class="input">
+			<input type="submit" id="submit1" value="Submit query">
+		</form>
+        <br /><br />
+
+        <div>
+		<p>2. List the users who posted the most number of comments; if there is a tie,
+			list all the users who have a tie. </p>
+	   </div>
+	      	<form method="post" action="query2.php">
+	        <input type="submit" id="submit2" value="Submit query">
+	      </form>
+	   <br /><br />
+
+           <div>
+	      <p>3. List the users who are followed by both X and Y. Usernames X and Y are inputs
+		from the user.</p>
+	   </div>
+	      <form method="post" action="query3.php">
+		<label class="input-label">Enter the username for X:</label>
+		<input type="text" id="username3X" name="username3X" placeholder="Username" class="input">
+	        <label class="input-label">Enter the username for Y:</label>
+		<input type="text" id="username3Y" name="username3Y" placeholder="Username" class="input">
+	        <input type="submit" id="submit3" value="Submit query">
+	      </form>
+	   <br /><br />
+
+	   <div>
+	      <p>4. Display all the users who never posted a blog.</p>
+	   </div> <br />
+	      <form method="post" action="query4.php">
+		<input type="submit" id="submit4" value="Submit query">
+	      </form>
+		<br /><br />
+
+           <div>
+	      <p>5. Display those users such that all the blogs they posted so far never received any 
+			negative comments. </p>
+	   </div> <br />
+	      <form method="post" action="query5.php">
+		<input type="submit" id="submit5" value="Submit query">
+	      </form>
+	   <br /><br />
+
+           <div>
+	      <p>6. List the (pair of) users with same hobby. In each row, you have to display both users 
+			as well as the common hobby.</p>
+	   </div> <br />
+	      <form method="post" action="query6.php">
+			<input type="submit" id="submit6" value="Submit query">
+	   	</form>
+	   </div>
+        </div>
+     </div>
+  </body>
+  </html>
