@@ -18,7 +18,8 @@
    $poster = $_POST['user'];
 
    
-    $stmtf = $db->prepare("INSERT INTO follows (leadername, followername) VALUES (?, ?)");
+    $insertf = "INSERT INTO follows (leadername, followername) VALUES (?, ?)";
+    $stmtf = $db->prepare($insertf);
     $stmtf->bind_param("ss", $po, $username);
     $stmtf->execute();
 

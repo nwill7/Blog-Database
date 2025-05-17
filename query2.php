@@ -13,24 +13,10 @@
 	   $dbuser = "root";
            $dbpass = "";
            $db = mysqli_connect("127.0.0.1", $dbuser, $dbpass, "users");
-	   $query = "SELECT * FROM (
-         SELECT posted_by, COUNT(*) AS postercomments
-               FROM comments
-               GROUP BY posted_by
-               ORDER BY postercomments DESC)
-               AS Results
-               WHERE EXISTS(SELECT 1 FROM (
-         SELECT posted_by, COUNT(*) AS postercomments2
-               FROM comments
-               GROUP BY posted_by
-               ORDER BY postercomments2 DESC)
-               AS Results2
-               WHERE Results.postercomments = Results2.postercomments2 AND
-                           Results.postercomments = (SELECT Max(postercomments3) From(SELECT posted_by, COUNT(*) AS postercomments3
-               FROM comments
-               GROUP BY posted_by
-               ORDER BY postercomments3 DESC)
-               AS Results))";
+	   $query = "SELECT posted_by, COUNT(*) AS postercomments
+         FROM comments
+         GROUP BY posted_by
+         ORDER BY postercomments DESC";
 	   $result = mysqli_query($db, $query);
 	   ?><div>2. List the users who posted the most number of comments; if there is a tie, list all the users who have a tie. </div>
 	      <div class="blog-title"><?php
@@ -39,9 +25,11 @@
             $check = $row['posted_by']; ?></div>
             <?php
             while($row=$result->fetch_assoc()){
+               if($row['posted_by'] == $check){
                   ?>
                   <div class="blog-title"><?php echo $row['posted_by']; ?></div>
                <?php
+               }
             }
 	   ?>
         <form method="post" action="queries.html">

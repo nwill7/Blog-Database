@@ -54,7 +54,7 @@
 	    	session_start();
 	    	$_SESSION['loggedin'] = true;
 		    $_SESSION['username'] = $newLusername;
-		    header("Location: http://localhost/DB Proj/home.php");
+		    header("Location: /DB Proj/home.php");
 		}
 	}
 	

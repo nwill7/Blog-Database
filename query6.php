@@ -32,14 +32,14 @@
                      <div class="blog-title">(<?php echo $thisrow['username']; ?><?php
                   }else if($currval == $thisrow ['hobby']){
                      ?>, <?php echo $thisrow ['username'];?>
-                     <?php $prevval = $thisrow['hobby'];
+                     <?php
                   }else if($currval != $thisrow['hobby']){
-                     ?>) Hobby : <?php echo $prevval;?></div>
+                     ?>) Hobby : <?php echo $thisrow['hobby'];?></div>
                      <?php $currval = $thisrow['hobby'];?>
                      <div class="blog-title">(<?php echo $thisrow['username']; ?>
                   <?php
                   }
-            } ?>) Hobby : <?php echo $prevval;?></div><?php
+               } ?>) Hobby : <?php echo $currval;?></div><?php
          ?>
         <form method="post" action="queries.html">
         <input type="submit" class="btn" id="returnQueriesButton" value="Return to Queries Page">
